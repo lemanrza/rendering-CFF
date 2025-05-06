@@ -3,8 +3,17 @@ import React, { useState } from 'react'
 const CustomButton = (props) => {
     const [clicked, setClicked] = useState(false)
     const [hovered, setHovered] = useState(false)
+    const [flag, setFlag] = useState(true)
+
     const clickBtn = () => {
-        setClicked(true)
+        if (flag) {
+            setClicked(true)
+            setFlag(false)
+        }
+        else {
+            setClicked(false)
+            setFlag(true)
+        }
     }
     const hoverBtn = () => {
         setHovered(true);
@@ -32,7 +41,7 @@ const CustomButton = (props) => {
                 {props.text}
             </button>
 
-            <p className={`${hovered ? "block" : "hidden"} mt-4 text-center text-blue-400 font-semibold text-xl`}>
+            <p className={`${hovered ? "block " : "hidden"} italic mt-4 text-center text-blue-400 font-semibold text-xl`}>
                 Hint
             </p>
         </div>
