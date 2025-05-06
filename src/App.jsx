@@ -4,7 +4,7 @@ function App() {
 
   return (
     <>
-      <CustomButton text="text" />
+      <CustomButton warn="warn" hint="hint" />
     </>
   )
 }
